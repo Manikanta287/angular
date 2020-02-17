@@ -1,0 +1,16 @@
+<div><h4 style="font-style:normal;color:rgba(0, 0, 0, 0.719)">{{operation}}</h4></div>
+<div class="leftwing"></div>
+<div class="rightwing"></div>
+<div class="aeroplane">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div style="margin-top: 105%;">
+        <div *ngIf="flighdetals">
+            <div class="seat" *ngFor="let passenger of flighdetals.passengersDetails;let i= index" [ngStyle]="{'background-color': setSeatcolor(passenger)}" (click)="clickOnSeat(i)">{{i}}</div>
+        </div>
+    </div>
+    <div>
+    <div class="back"></div>
+    <div class="backleft"></div>
+    <div class="backright"></div>
+

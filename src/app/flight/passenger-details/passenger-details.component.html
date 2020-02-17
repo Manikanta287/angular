@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Passenger Details</h1>
+<mat-dialog-content>
+    <mat-grid-list cols="2" rowHeight="5:1">
+        <mat-grid-tile>Name:-</mat-grid-tile>
+        <mat-grid-tile>{{data.passengername}}</mat-grid-tile>
+        <mat-grid-tile>Checked In Status:-</mat-grid-tile>
+        <mat-grid-tile>{{(data.checkedInStatus?'Yes':'No')}}</mat-grid-tile>
+        <mat-grid-tile>Require Wheel Chair:-</mat-grid-tile>
+        <mat-grid-tile>{{(data.requirewheelChair? 'Yes':'No')}}</mat-grid-tile>
+        <mat-grid-tile>With Infants</mat-grid-tile>
+        <mat-grid-tile>{{(data.withInfants? 'Yes':'No')}}</mat-grid-tile>
+        <mat-grid-tile>Meal:-</mat-grid-tile>
+        <mat-grid-tile *ngFor="let item of data.ancillaryservices.meal">{{item}}</mat-grid-tile>
+        <mat-grid-tile>Additional baggage weight</mat-grid-tile>
+        <mat-grid-tile>{{data.ancillaryservices.additionalbaggage}}</mat-grid-tile>
+        <mat-grid-tile>Address:-</mat-grid-tile>
+        <mat-grid-tile>{{data.Address}}</mat-grid-tile>
+        <mat-grid-tile>Passport Number:-</mat-grid-tile>
+        <mat-grid-tile>{{data.passportNumber}}</mat-grid-tile>
+    </mat-grid-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

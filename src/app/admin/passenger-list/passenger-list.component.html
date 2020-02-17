@@ -1,0 +1,39 @@
+<label class="margin" style="color: black;font-family: Arial;">Filter passengers by missing mandatory requirements:</label>
+<form [formGroup]="filter" (ngSubmit)="applyFilter()" class="section">
+    <section >
+        <mat-checkbox class="margin" color='primary' formControlName="Address">Address</mat-checkbox>
+        <mat-checkbox class="margin" color='primary' formControlName="passport">Passport</mat-checkbox>
+      </section>
+
+<button mat-stroked-button color="primary" type="submit" style="margin-left: 20px;">Apply</button>
+<button mat-stroked-button color="warn" type="button" style="margin-left: 20px;" (click)="clearFilters()">Clear</button>
+
+</form>
+<table mat-table>
+  <ng-container matColumnDef="passengername">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let user"> {{user.passengername}} </td>
+  </ng-container>
+  <ng-container matColumnDef="checkedInStatus">
+    <th mat-header-cell *matHeaderCellDef>CheckedInstatus</th>
+    <td mat-cell *matCellDef="let user"> {{(user.checkedInStatus)?'Yes':'No'}} </td>
+  </ng-container>
+  <ng-container matColumnDef="requirewheelChair">
+    <th mat-header-cell *matHeaderCellDef>RequirewheelChair</th>
+    <td mat-cell *matCellDef="let user"> {{(user.requirewheelChair)?'Yes':'No'}} </td>
+  </ng-container>
+  <ng-container matColumnDef="withInfants">
+    <th mat-header-cell *matHeaderCellDef>WithInfants</th>
+    <td mat-cell *matCellDef="let user"> {{(user.withInfants)?'Yes':'No'}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Address">
+    <th mat-header-cell *matHeaderCellDef>Address</th>
+    <td mat-cell *matCellDef="let user"> {{user.Address===''?'NA':user.Address}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Passport">
+    <th mat-header-cell *matHeaderCellDef>Passport</th>
+    <td mat-cell *matCellDef="let user">{{user.passportNumber===''?'NA':user.passportNumber}}  </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+<tr mat-row *matRowDef="let user; columns: columnsToDisplay;let i=index" class="effect" (click)="editPassengerDetails(user)"></tr>
+</table>

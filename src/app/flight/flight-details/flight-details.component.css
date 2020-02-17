@@ -1,0 +1,133 @@
+.seat {
+    display: inline-block;
+    margin-left: 13px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: x-small;
+    cursor: pointer;
+    width:25px;
+    height: 25px;
+    border-radius: 2px;
+}
+
+.seat:hover {
+    box-shadow: 1px 1px black;
+}
+
+.aeroplane {
+   
+    position: absolute;
+    top:20%;
+    left: 40%;
+    width: 180px;
+    height: 700px;
+    border-top: 1px solid rgba(66, 65, 65, 0.37);
+    border-left: 1px solid rgba(66, 65, 65, 0.37);
+    border-right: 1px solid rgba(66, 65, 65, 0.37);
+    border-bottom: 1px solid rgba(66, 65, 65, 0.37);
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 1px 0px rgba(0, 0, 0, 0.438);
+}
+
+.left {
+    position: absolute;
+    top:15%;
+    left: 25%;
+	width:40px;
+	height: 20px;
+	transform: skew(-25deg);
+	background: rgb(192, 225, 240);
+}
+
+.right {
+    position: absolute;
+    top:15%;
+    left: 50%;
+	width:40px;
+	height: 20px;
+	transform: skew(-25deg);
+	background: rgb(192, 225, 240);
+}
+
+.leftwing {
+    position: absolute;
+    left: 15%;
+    top:60%;
+    border-bottom: 30vw solid rgba(66, 65, 65, 0.37);
+	border-left: 8vh solid transparent;
+    border-right: 8vh solid transparent; 
+    transform: rotate(270deg);
+    height:0; 
+	width:5.5%;
+}
+
+.rightwing {
+    position: absolute;
+    left: 68%;
+    top:60%;
+    border-bottom: 30vw solid rgba(66, 65, 65, 0.37);
+	border-left: 8vh solid transparent;
+    border-right: 8vh solid transparent; 
+    transform: rotate(90deg);
+    height:0; 
+	width:5.5%;
+}
+
+.back {
+    position: absolute;
+    left: -11%;
+    top:113%;
+    height:10px; 
+    width:200px;
+    transform: rotate(90deg);
+    border: 1px solid  rgba(66, 65, 65, 0.37);
+    background-color:  rgba(66, 65, 65, 0.37);
+    border-radius: 50%;
+}
+
+.backleft {
+    position: absolute;
+    left:62%;
+    top:84%;
+    width: 70px;
+    height: 30px;
+    transform: rotate(86deg);
+    border-top: 200px solid transparent;
+	border-right: 100px solid  rgba(66, 65, 65, 0.37);
+	border-bottom: 10px solid transparent;
+}
+
+.backright {
+    position: absolute;
+    left:-65%;
+    top:84%;
+    width: 70px;
+    height: 30px;
+    transform: rotate(-86deg);
+    border-top: 200px solid transparent;
+	border-left: 100px solid  rgba(66, 65, 65, 0.37);
+	border-bottom: 10px solid transparent;
+}
+
+@media only screen and (max-width: 1100px) {
+   .leftwing {
+       display: none;
+   }
+   .rightwing{
+       display: none;
+   }
+   .back {
+       display: none;
+   }
+
+   .backleft{
+       display: none;
+   }
+
+   .backright {
+       display: none;
+   }
+  }

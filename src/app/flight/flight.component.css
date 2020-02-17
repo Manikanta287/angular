@@ -1,0 +1,48 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+.toolbar{
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  border-radius: 2px;
+  box-shadow: 4px 4px rgba(160, 160, 160, 0.404);
+}
+.brand {
+  position: relative;
+  font-style: italic;
+  animation: move 18s infinite;
+}
+
+@keyframes move {
+  0% {left: -16%;
+        }
+  100% {
+    left: 102%;}
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.logout {
+  padding: 0 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.example-spacer {
+  -webkit-flex: 1; /* Safari 6.1+ */
+  -ms-flex: 1; /* IE 10 */
+  flex: 1 1 auto;
+}
+
+.profile {
+ border-radius: 50%;
+ height: 50px;
+}

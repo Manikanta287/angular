@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar class="toolbar" style="font-style: italic;">Admin Actions</mat-toolbar>
+      <mat-nav-list>
+            <a mat-list-item routerLink="flights" routerLink="/admin">Flight List</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item  *ngIf="enable" (click)="addpassengers()">Add Passengers</a>
+            <mat-divider *ngIf="enable"></mat-divider>
+      </mat-nav-list>
+      
+    
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar class="toolbar">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+            <span style="font-style: italic;" >MMM &nbsp;</span>
+                <mat-icon style="transform: rotate(90deg);font-size:30px;">airplanemode_active</mat-icon> 
+                <span>&nbsp;Airlines</span>
+                <span class="example-spacer"></span>
+                <span (click)="Logout()" class="logout">Logout</span>
+      </mat-toolbar>
+      
+       <router-outlet style="margin-left:5px"></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

@@ -1,0 +1,42 @@
+<form [formGroup]="Passenger" (ngSubmit)="Add()">
+    <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Name" formControlName="name" required>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field>
+        <mat-select placeholder="CheckIn" formControlName="checkIn">
+            <mat-option value="true">YES</mat-option>
+            <mat-option value="false">NO</mat-option>
+          </mat-select>
+      </mat-form-field>
+      <mat-form-field style="margin-left: 10px;margin-right: 10px;">
+            <mat-select placeholder="wheelchair" formControlName="wheelChair">
+                <mat-option value="true">YES</mat-option>
+                <mat-option value="false">NO</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+                <mat-select placeholder="infants" formControlName="infants">
+                    <mat-option value="true">YES</mat-option>
+                    <mat-option value="false">NO</mat-option>
+                  </mat-select>
+            </mat-form-field>
+            <mat-divider></mat-divider>
+            <mat-form-field style="width: 100%;">
+                    <input matInput placeholder="Address" formControlName="address">
+                </mat-form-field>
+                <mat-divider></mat-divider>
+                <mat-form-field style="width: 100%;">
+                        <input matInput placeholder="PassportNumber" formControlName="passport">
+                    </mat-form-field>
+                    <mat-divider></mat-divider>
+                    <mat-form-field style="width: 100%;">
+                        <input matInput placeholder="Meal" formControlName="meal">
+                    </mat-form-field>
+                    <mat-divider></mat-divider>
+                    <mat-form-field style="width: 100%;">
+                        <input matInput placeholder="Baggage weight" formControlName="baggage">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit" style="float: right;" [disabled]='!Passenger.valid'>Save</button>
+                    <button mat-raised-button color="warn" style="float: right;margin-right: 5px;" (click)="cancel()" type="button">cancel</button>
+                </form>

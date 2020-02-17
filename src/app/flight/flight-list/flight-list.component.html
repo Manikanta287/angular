@@ -1,0 +1,17 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="Airlines">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Airlines</th>
+      <td mat-cell *matCellDef="let row">{{row.airlines}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="ScheduledTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ScheduledTime</th>
+      <td mat-cell *matCellDef="let row">{{row.scheduledtime | date:'short'}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;" (click)="fun(i)" class="raiseeffectt" routerLinkActive="router-link-active" ></tr>
+  </table>
+</div>
