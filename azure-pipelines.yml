@@ -23,15 +23,6 @@ steps:
 
 
 
-- task: DownloadBuildArtifacts@0
-  inputs:
-    buildType: 'specific'
-    project: '334bfc98-3692-4877-b23d-17bd3568c29f'
-    pipeline: '1'
-    buildVersionToDownload: 'latest'
-    downloadType: 'single'
-    itemPattern: '**/dist'
-    downloadPath: '$(System.ArtifactsDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
