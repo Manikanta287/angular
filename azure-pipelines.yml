@@ -30,7 +30,6 @@ steps:
     pipeline: '1'
     buildVersionToDownload: 'latest'
     downloadType: 'single'
-    artifactName: 'app'
     itemPattern: '**/dist'
     downloadPath: '$(System.ArtifactsDirectory)'
 - task: PublishBuildArtifacts@1
