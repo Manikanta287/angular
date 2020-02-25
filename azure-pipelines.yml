@@ -24,6 +24,7 @@ steps:
   inputs:
     Contents: '**/Airline/dist' ## update to match what you want to copy
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
   inputs: 
