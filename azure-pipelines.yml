@@ -20,14 +20,18 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(Build.SourcesDirectory)'
+- task: DownloadBuildArtifacts@0
   inputs:
-    Contents: '**\README.md' ## update to match what you want to copy
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: true
-
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'Dist'
+    itemPattern: '**/dist'
+    downloadPath: '$(Build.ArtifactStagingDirectory)'
+    
 - task: PublishBuildArtifacts@1
-  inputs: 
-    pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
- 
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+
