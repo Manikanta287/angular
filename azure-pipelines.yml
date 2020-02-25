@@ -18,15 +18,9 @@ steps:
 - script: |
     npm install -g @angular/cli@9.0.1
     npm install
-    ng build
+    ng build --prod
   displayName: 'npm install and build'
 
-- task: DownloadBuildArtifacts@0
-  inputs:
-    buildType: 'current'
-    downloadType: 'specific'
-    itemPattern: '**/dist'
-    downloadPath: '$(System.ArtifactsDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
