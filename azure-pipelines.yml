@@ -20,13 +20,10 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
-- task: DownloadBuildArtifacts@0
+- task: CopyFiles@2
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    artifactName: 'Dist'
-    itemPattern: '**/dist'
-    downloadPath: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**/dist/Airline/index.html' ## update to match what you want to copy
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
     
 - task: PublishBuildArtifacts@1
   inputs:
