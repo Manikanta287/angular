@@ -23,7 +23,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.SourcesDirectory)'
   inputs:
-    Contents: '**\dist**' ## update to match what you want to copy
+    Contents: '**\README.md' ## update to match what you want to copy
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
 
