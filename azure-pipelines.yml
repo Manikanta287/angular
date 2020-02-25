@@ -21,7 +21,7 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 - task: CopyFiles@2
-  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy Files to: $(Build.SourcesDirectory)'
   inputs:
     Contents: '**\dist**' ## update to match what you want to copy
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
