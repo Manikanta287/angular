@@ -23,6 +23,6 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/angular/index.html'
+    PathtoPublish: '$(Build.SourcesDirectory)/index.html'
     ArtifactName: 'drop'
     publishLocation: 'Container'
