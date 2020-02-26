@@ -23,6 +23,6 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/dist'
+    PathtoPublish: '$(Build.SourcesDirectory)/**/dist'
     ArtifactName: 'drop'
     publishLocation: 'Container'
