@@ -24,6 +24,6 @@ steps:
     customCommand: 'run prod-build-dev'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
     ArtifactName: 'drop'
     publishLocation: 'Container'
