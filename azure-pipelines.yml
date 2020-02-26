@@ -23,7 +23,7 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)'
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '**/angular/dist'
+    rootFolderOrFile: 'Manikanta287/angular/dist'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
