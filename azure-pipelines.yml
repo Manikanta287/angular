@@ -23,7 +23,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: '**/dist/Airline**'
+    contents: '**/dist/**/index.html'
     targetFolder: $(Build.ArtifactStagingDirectory)
 - task: PublishBuildArtifacts@1
   inputs:
