@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/manikantamerugumala/Airlines/_apis/build/status/Manikanta287.angular?branchName=master)](https://dev.azure.com/manikantamerugumala/Airlines/_build/latest?definitionId=1&branchName=master)
 # Airline
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
