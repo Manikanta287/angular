@@ -20,12 +20,16 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
-
-- task: CopyFiles@2
+  workingDirectory: '$(Build.SourcesDirectory)'
+- task: ArchiveFiles@2
   inputs:
-    contents: '**/dist**'
-    targetFolder: $(Build.ArtifactStagingDirectory)
+    rootFolderOrFile: 'angular/dist'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true    
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: $(Build.ArtifactStagingDirectory)
-    artifactName: MyBuildOutputs
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
