@@ -15,9 +15,9 @@ steps:
     versionSpec: '10.15.0'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli@9.0.1
-    npm install
+- task: Npm@1
+  inputs:
+    command: 'install'
 - task: Npm@1
   inputs:
     command: 'custom'
