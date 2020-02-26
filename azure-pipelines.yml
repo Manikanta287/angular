@@ -22,8 +22,11 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'run prod-build-dev'
+- task: CopyFiles@2
+  inputs:
+    contents: 'dist/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: MyBuildOutputs
